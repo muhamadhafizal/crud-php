@@ -1,5 +1,5 @@
 <?php
-include_once 'config.php';
+include_once ('connection/config.php');
 
 // fetch files
 $result = mysqli_query($mysqli, "SELECT filename FROM tbl_users");

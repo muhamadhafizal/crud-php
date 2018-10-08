@@ -7,11 +7,11 @@
 		$user_id = $_POST['user_id'];
 		
 		// include database connection file
-		include_once("config.php");
+		include_once("connection/config.php");
 				
 		// Insert user data into table
 		$sql = mysqli_query($mysqli, "INSERT INTO file(title,file,user_id) VALUES('$title','$file','$user_id')");
-		echo "User added successfully. <a href='file.php?id=$user_id'>Back</a>";
+		header('Location: ' . $_SERVER['HTTP_REFERER']);
 	
 	}
 	?>

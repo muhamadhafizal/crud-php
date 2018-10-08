@@ -1,6 +1,6 @@
 <?php
 // include database connection file
-include_once("config.php");
+include_once("connection/config.php");
  
 // Get id from URL to delete that user
 $id = $_GET['id'];
@@ -28,15 +28,14 @@ $sql  = mysqli_query($mysqli, "SELECT * FROM file WHERE user_id=$id");
 <form action="addFile.php" method="POST" name="form1">
 		<table width="25%" border="0">
 			<tr> 
-				<td>Title</td>
+				<td>FirstName</td>
 				<td><input type="text" name="title"></td>
 			</tr>
 			<tr> 
-				<td>Name</td>
+				<td>LastName</td>
 				<td><input type="text" name="file"></td>
 			</tr>
 			<tr>
-				<td>USER ID</td>
 				<td><input type="hidden" name="user_id" value=" <?php echo $id; ?> "</td>
 			</tr>
 			<tr> 
@@ -51,8 +50,9 @@ $sql  = mysqli_query($mysqli, "SELECT * FROM file WHERE user_id=$id");
 
 <table width='80%' border=1>
 	<tr>
-		<th>TITLE</th>
-		<th>FILE</th>
+		<th>FirstName</th>
+		<th>LastName</th>
+		<th>Update</th>
 	</tr>
 
     <?php  
@@ -61,7 +61,8 @@ $sql  = mysqli_query($mysqli, "SELECT * FROM file WHERE user_id=$id");
 
         echo "<tr>";
         echo "<td>".$user_data['title']."</td>";
-        echo "<td>".$user_data['file']."</td></tr>";      
+        echo "<td>".$user_data['file']."</td>";
+        echo "<td><a href='editchild.php?id=$user_data[id]'>Edit</a> |<a href='deletechild.php?id=$user_data[id]'>Delete</a></td></tr>";      
     }
     ?>
 </table>

@@ -1,6 +1,6 @@
 <?php
 // include database connection file
-include_once("config.php");
+include_once("connection/config.php");
  
 // Check if form is submitted for user update, then redirect to homepage after update
 if(isset($_POST['update']))
@@ -39,7 +39,7 @@ while($user_data = mysqli_fetch_array($result))
 </head>
  
 <body>
-	<a href="index.php">Home ABCD chfghgfhffdgdfgdfgdfgdfdfgdfgfdgfdgdfgfdg</a>
+	<a href="index.php">Home</a>
 	<br/><br/>
 	
 	<form name="update_user" method="post" action="edit.php">

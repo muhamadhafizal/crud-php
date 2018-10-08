@@ -1,6 +1,6 @@
 <?php
 // Create database connection using config file
-include_once("config.php");
+include_once("connection/config.php");
  
 // Fetch all users data from database
 $result = mysqli_query($mysqli, "SELECT * FROM file ORDER BY id DESC");
@@ -22,7 +22,7 @@ $result1 = mysqli_query($mysqli, "SELECT * FROM file JOIN users ON file.user_id=
     <table width='80%' border=1>
  
     <tr>
-        <th>Name</th><th>Title</th> <th>File</th> <th>Email</th>
+        <th>ParentName</th><th>ChildName</th>
     </tr>
     
     <?php  
@@ -32,11 +32,7 @@ $result1 = mysqli_query($mysqli, "SELECT * FROM file JOIN users ON file.user_id=
        
         echo "<tr>";
         echo "<td>".$file['first_name']."</td>"; 
-        echo "<td>".$file['title']."</td>";
-        echo "<td>".$file['file']."</td>";
-        echo "<td>".$file['email']."</td>";
-           
-      
+        echo "<td>".$file['title']."</td>";  
     }
     ?>
     </table>

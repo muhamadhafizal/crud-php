@@ -37,7 +37,7 @@
 		$last_name = $_POST['last_name'];
 		
 		// include database connection file
-		include_once("config.php");
+		include_once("connection/config.php");
 				
 		// Insert user data into table
 		$result = mysqli_query($mysqli, "INSERT INTO users(first_name,email,last_name) VALUES('$first_name','$email','$last_name')");
